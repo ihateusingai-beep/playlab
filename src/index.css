@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans HK", sans-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-semibold transition-colors;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700 active:bg-brand-800;
+  }
+  .btn-ghost {
+    @apply btn bg-white text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50;
+  }
+  .btn-ghost-sm {
+    @apply btn bg-white text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50 px-2.5 py-1 text-xs;
+  }
+  .card {
+    @apply rounded-2xl bg-white shadow-card transition-shadow;
+  }
+  .card-hover {
+    @apply hover:shadow-cardHover;
+  }
+  .input {
+    @apply rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200;
+  }
+  .tag {
+    @apply inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(203 213 225) transparent;
+  }
+  /* Pseudo-fullscreen fallback (iOS Safari) */
+  .pseudo-fs {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+    background: black;
+  }
+  .overflow-hidden {
+    overflow: hidden !important;
+  }
+  /* Lock touch scrolling for touch-safe games. */
+  .touch-lock {
+    touch-action: none;
+    overscroll-behavior: contain;
+  }
+}
